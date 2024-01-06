@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+        <meta name="description" content="Material handling">
+        <meta name="author" content="sam lee">
+        <title>
+            Material handling
+        </title>
+        <style>
+            @keyframes hidePreloader{0%{width:100%;height:100%}100%{width:0;height:0}}body>div.preloader{position:fixed;background:#fff;width:100%;height:100%;z-index:1071;opacity:0;transition:opacity
+            .5s ease;overflow:hidden;pointer-events:none;display:flex;align-items:center;justify-content:center}body:not(.loaded)>div.preloader{opacity:1}body:not(.loaded){overflow:hidden}body.loaded>div.preloader{animation:hidePreloader
+            .5s linear .5s forwards}
+        </style>
+        <script>
+            window.addEventListener("load",
+            function() {
+                setTimeout(function() {
+                    document.querySelector("body").classList.add("loaded")
+                },
+                300)
+            })
+        </script>
+        <link rel="stylesheet" href="/static/css/all.min.css">
+        <link rel="stylesheet" href="/static/css/quick-website.css">
+        <link rel="stylesheet" href="/static/css/docs.css">
+    </head>
+
+    <body class="docs">
+        <header class="header">
+            <nav  class="navbar navbar-main navbar-expand-lg fixed-top navbar-shadow navbar-light bg-white border-bottom">
+                <div class="container-fluid justify-content-between">
+                    <div class="navbar-user d-lg-none">
+                        <ul class="navbar-nav flex-row align-items-center">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link nav-link-icon sidenav-toggler" data-action="sidenav-pin"
+                                data-target="#sidenav-main">
+                                    <i data-feather="menu">
+                                    </i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="navbar-brand" href="/">
+                        <img style="height:35px" alt="Image placeholder" src="/static/picture/logo.png">
+                    </a>
+                    <ul class="navbar-nav flex-row align-items-center d-lg-none">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link nav-link-icon">
+                                <i data-feather="eye">
+                                </i>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="/" class="btn btn-sm btn-primary ml-4 btn-icon d-none d-lg-inline-flex">
+                        <span  class="btn-inner--text">重新回到預設值</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <div class="container-fluid container-docs">
+            <nav class="sidenav navbar navbar-vertical navbar-expand-xs navbar-light bg-white" style="display: block;">
+                <div class="scrollbar-inner px-4">
+                    <div class="docs-sidebar pt-6 pt-lg-7">
+                        <h6 class="mt-4">
+                            <a href="/">基礎規劃方案</a>
+                        </h6>
+
+                        <h6 class="mt-4">
+                            <a href="/opt">優化規劃方案</a>
+                        </h6>
+                    </div>
+                </div>
+            </nav>
+            <div class="main-content row position-relative pb-5">
+                <div class="col-xl-9 docs-content pb-5">
+                    <div class="docs-title" style="margin-top: 35px">
+                        <h3>
+                             優化規劃方案
+                        </h3>
+                        <p style="margin: 0">將一次搬運 3 顆的機台負責距離最遠的任務，搬運兩個的負責第二遠的任務，搬運一顆的負責最近的任務</p>
+                    </div>
+
+
+                    <div class="docs-example" style="margin-top: 35px">
+                        <div>
+                            <h4>Speed</h4>
+                            <p>ARM 的移動數度為 <span contenteditable="true" id="speed">0.5</span> m.s</p>
+                        </div>
+                        <div class="tab-example-result" style="margin-top: 50px">
+                            <h4>Average moving distance within zone</h4>
+                            <p>在以下表格內輸入 zone 內的平動距離</p>
+                            <table class="table" style="margin: 0" id="zone_distances">
+                                <thead>
+                                 <tr>
+                                        <th >
+                                            zone1
+                                        </th>
+                                        <th>
+                                            zone2
+                                        </th>
+                                        <th>
+                                            zone3
+                                        </th>
+                                        <th>
+                                            zone4
+                                        </th>
+                                        <th>
+                                            zone6
+                                        </th>
+                                        <th>
+                                            zone7
+                                        </th>
+                                        <th>
+                                            zone8
+                                        </th>
+                                        <th>
+                                            zone9
+                                        </th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody contenteditable="true">
+                                    <tr>
+                                        <td>
+                                            115
+                                        </td>
+                                        <td>
+                                            115
+                                        </td>
+                                        <td>
+                                            122.5
+                                        </td>
+                                        <td>
+                                            135.5
+                                        </td>
+                                        <td>
+                                            115
+                                        </td>
+                                        <td>
+                                            122.5
+                                        </td>
+                                        <td>
+                                            122.5
+                                        </td>
+                                        <td>
+                                            127.5
+                                        </td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                            <hr style="margin: 0">
+                        </div>
+                        <div class="tab-example-result" style="margin-top: 50px">
+                            <h4>zone's width</h4>
+                            <p>在以下表格內輸入八個 zone 的寬度</p>
+                            <table class="table" style="margin: 0" id="width">
+
+                                <tbody contenteditable="true">
+                                    <tr>
+                                        <td>
+                                            53
+                                        </td>
+                                        <td>
+                                            36
+                                        </td>
+                                        <td>
+                                            24
+                                        </td>
+                                        <td>
+                                            17
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            41
+                                        </td>
+                                        <td>
+                                            36
+                                        </td>
+                                        <td>
+                                            36
+                                        </td>
+                                        <td>
+                                            17
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                            <hr style="margin: 0">
+                        </div>
+                        <div class="tab-example-result" style="margin-top: 50px">
+                            <h4>From to chart</h4>
+                            <p>在以下表格內輸入 form to chart 的數據，分別為 8 個 zone 到 8 個 zone 的顆數需求</p>
+                            <table id="from_to_chart" class="table" style="margin: 0">
+
+                                <tbody contenteditable="true">
+                                    <tr>
+                                        <td>
+                                            88404
+                                        </td>
+                                        <td>
+                                            24045
+                                        </td>
+                                        <td>
+                                            2636
+                                        </td>
+                                        <td>
+                                            753
+                                        </td>
+                                        <td>
+                                            18506
+                                        </td>
+                                        <td>
+                                            17268
+                                        </td>
+                                        <td>
+                                            16120
+                                        </td>
+                                        <td>
+                                            7136
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            9266
+                                        </td>
+                                        <td>
+                                            6865
+                                        </td>
+                                        <td>
+                                            7133
+                                        </td>
+                                        <td>
+                                            11018
+                                        </td>
+                                        <td>
+                                            9717
+                                        </td>
+                                        <td>
+                                            12595
+                                        </td>
+                                        <td>
+                                            8676
+                                        </td>
+                                        <td>
+                                            8087
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            4580
+                                        </td>
+                                        <td>
+                                            4758
+                                        </td>
+                                        <td>
+                                            7679
+                                        </td>
+                                        <td>
+                                            12046
+                                        </td>
+                                        <td>
+                                            0
+                                        </td>
+                                        <td>
+                                            21188
+                                        </td>
+                                        <td>
+                                            350
+                                        </td>
+                                        <td>
+                                            1644
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            2309
+                                        </td>
+                                        <td>
+                                            8825
+                                        </td>
+                                        <td>
+                                            8193
+                                        </td>
+                                        <td>
+                                            8793
+                                        </td>
+                                        <td>
+                                            0
+                                        </td>
+                                        <td>
+                                            28739
+                                        </td>
+                                        <td>
+                                            659
+                                        </td>
+                                        <td>
+                                            6122
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            325
+                                        </td>
+                                        <td>
+                                            139
+                                        </td>
+                                        <td>
+                                            12
+                                        </td>
+                                        <td>
+                                            68
+                                        </td>
+                                        <td>
+                                            22848
+                                        </td>
+                                        <td>
+                                            8859
+                                        </td>
+                                        <td>
+                                            23568
+                                        </td>
+                                        <td>
+                                            2357
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            43694
+                                        </th>
+                                        <td>
+                                            20717
+                                        </td>
+                                        <td>
+                                            21597
+                                        </td>
+                                        <td>
+                                            30046
+                                        </td>
+                                        <td>
+                                            6323
+                                        </td>
+                                        <td>
+                                            30430
+                                        </td>
+                                        <td>
+                                            23817
+                                        </td>
+                                        <td>
+                                            30752
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            9268
+                                        </td>
+                                        <td>
+                                            1240
+                                        </td>
+                                        <td>
+                                            1409
+                                        </td>
+                                        <td>
+                                            876
+                                        </td>
+                                        <td>
+                                            377
+                                        </td>
+                                        <td>
+                                            64066
+                                        </td>
+                                        <td>
+                                            22784
+                                        </td>
+                                        <td>
+                                            6250
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            13326
+                                        </td>
+                                        <td>
+                                            3481
+                                        </td>
+                                        <td>
+                                            4133
+                                        </td>
+                                        <td>
+                                            4095
+                                        </td>
+                                        <td>
+                                            382
+                                        </td>
+                                        <td>
+                                            22030
+                                        </td>
+                                        <td>
+                                            10113
+                                        </td>
+                                        <td>
+                                            13078
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                            <hr style="margin: 0">
+                        </div>
+
+                        <button class="btn btn-light" style="margin-top: 50px" onclick="calculate()">
+                            開始計算
+                        </button>
+
+                        <div  id="answer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/svg-injector.min.js"></script>
+    <script src="/static/js/feather.min.js"></script>
+    <script src="/static/js/highlight.min.js"></script>
+    <script src="/static/js/clipboard.min.js"></script>
+    <script src="/static/js/quick-website.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.4/axios.min.js" integrity="sha512-ANd7ZJmixP2T0hxOP4bS6hkci01fxyrQSyRdaY7IsWq1WlKsD0WwWBDVDZbnMR7CJZVKCTkDx/q5D5n2C2C+vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        function tableToDataArray(tableId) {
+            const table = document.getElementById(tableId);
+            const rows = table.getElementsByTagName('tr');
+            const data = [];
+
+            for (let i = 0; i < rows.length; i++) {
+                const cols = rows[i].getElementsByTagName('td');
+                const row_data = Array.from(cols).map(col => parseFloat(col.innerText.trim()));
+                data.push(row_data);
+            }
+            return data;
+        }
+
+        // Get the table data
+        const tableData = tableToDataArray('from-to-chart');
+
+
+        function calculate(){
+            axios.post('/opt/',{
+                'from_to_chart':tableToDataArray('from_to_chart'),
+                'width':tableToDataArray('width'),
+                'speed':document.getElementById('speed').textContent,
+                'zone_distances':tableToDataArray('zone_distances')
+            }).then(res=>{
+                if(res.data.errno === 0){
+                        swal({
+                            'title':'計算中',
+                            'icon':'success',
+                            'buttons':false,
+                            'text':"請稍候...",
+                            'timer':1500
+                        })
+                        $("#answer").empty()
+                        $("#answer").append($(`
+                            <div class="docs-title">
+                                <h2>
+                                    計算結果
+                                </h2>
+                                <p style="margin-bottom: 0">20000 片需要 ${res.data.final_ans} 台</p>
+                                <p style="margin-bottom: 0">60000 片需要 ${res.data.final_ans*3} 台</p>
+
+                            </div>
+                        `))
+                }
+            })
+        }
+
+
+
+    </script>
+
+
+    </body>
+
+</html>
