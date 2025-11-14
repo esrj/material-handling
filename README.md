@@ -1,4 +1,4 @@
-設施規劃期末報告
+設施規劃
 
 (ㄧ) 專案結構講解
 運行方式:終端指令 python3 manage.py runserver
